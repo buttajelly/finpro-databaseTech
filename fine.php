@@ -16,7 +16,9 @@ if( isset($_POST["search"]))
     else
     {
         $querySearch = "SELECT * FROM denda WHERE 
-        idDenda LIKE '%$keyword%'
+        idDenda LIKE '%$keyword%' OR
+        jenisPembayaran LIKE '%$keyword%' OR
+        jenisDenda LIKE '%$keyword%'
         ";
         $result = mysqli_query($conn, $querySearch);
     }
